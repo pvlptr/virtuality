@@ -1,0 +1,5 @@
+<ul class="tours-list">
+    <li *ngFor="let tour of tours" [class.selected]="tour === selectedTour" (click)="onSelect(tour)">
+        <span class="badge">{{tour.id}}</span> {{tour.name}}
+    </li>
+</ul>

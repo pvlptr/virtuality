@@ -1,0 +1,13 @@
+  .tours-search-container{
+     display: flex;
+  }
+
+  .tours-list{
+    margin: auto;
+    flex:9;    
+  }
+
+  .tours-facets{
+    margin: auto;    
+    flex:3;
+  }

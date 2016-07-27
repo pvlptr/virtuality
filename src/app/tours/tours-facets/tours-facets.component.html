@@ -1,0 +1,10 @@
+<ul class="facets">
+    <li *ngFor="let facet of facets">
+        {{facet.name}}
+        <ul>
+            <li *ngFor="let facetItem of facet.items">
+                {{facetItem.name}} - {{facetItem.count}}
+            </li>
+        </ul>
+    </li>
+</ul>
