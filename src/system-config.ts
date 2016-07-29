@@ -9,11 +9,33 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  '@angular2-material': 'vendor/@angular2-material'
 };
 
 /** User packages configuration. */
-const packages: any = {
-};
+const materialPackages: string[] = [
+  'core',
+  'toolbar',
+  'icon',
+  'button',
+  'sidenav',
+  'list',
+  'card',
+  'input',
+  'radio',
+  'checkbox'
+];
+
+const packages: any = {};
+
+materialPackages.forEach((pkg) => {
+  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+});
+
+// packages['@ng-bootstrap/ng-bootstrap'] = {
+//   defaultExtension: 'js',
+//   main: 'index.js'
+// };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
@@ -55,6 +77,7 @@ declare var System: any;
 System.config({
   map: {
     '@angular': 'vendor/@angular',
+    '@angular2-material': 'vendor/@angular2-material',
     'rxjs': 'vendor/rxjs',
     'main': 'main.js'
   },
