@@ -27,6 +27,10 @@ export const FACETS: Facet[] = [
       {
         name: 'Alytaus kraštotyros muziejus',
         count: 4
+      },
+      {
+        name: 'Labai ilgas muziejaus pavadinimas skirtas išsibandyti wrapą',
+        count: 2
       }
     ]
   },

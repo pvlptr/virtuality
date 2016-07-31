@@ -1,13 +1,19 @@
-  .tours-search-container{
-     display: flex;
-  }
+.tours-search-container{
+   display: flex;
+    align-items: flex-start;
+}
 
-  .tours-list{
-    margin: auto;
-    flex:9;    
-  }
+.tours-list{
+  margin: auto;
+  flex:9;    
+}
 
-  .tours-facets{
-    margin: auto;    
-    flex:3;
-  }
+.tours-facets{ 
+  flex:3;
+}
+
+@media screen and (max-width: 992px) {
+    .tours-facets{
+      display: none;
+    }
+}

@@ -32,26 +32,6 @@ import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
   providers: [MdIconRegistry, MdRadioDispatcher]
 })
 export class AppComponent {
-  formShowing: boolean = false;
-  views: Object[] = [
-    {
-      name: "My Account",
-      description: "Edit my account information",
-      icon: "assignment ind"
-    },
-    {
-      name: "Potential dates",
-      description: "Find your soulmate!",
-      icon: "pets"
-    }
-  ];
-  dogs: Object[] = [
-    { name: "Porter" },
-    { name: "Mal" },
-    { name: "Razzle" },
-    { name: "Koby" },
-    { name: "Molly" },
-    { name: "Husi" }
-  ];
+
 }
 

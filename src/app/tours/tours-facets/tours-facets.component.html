@@ -1,10 +1,9 @@
-<ul class="facets">
-    <li *ngFor="let facet of facets">
-        {{facet.name}}
-        <ul>
-            <li *ngFor="let facetItem of facet.items">
-                {{facetItem.name}} - {{facetItem.count}}
-            </li>
-        </ul>
-    </li>
-</ul>
+<div class="facets">
+    <div *ngFor="let facet of facets" class="facet">
+        <div class="facet-header">{{facet.name}}</div>
+
+        <md-checkbox class="facet-item" *ngFor="let facetItem of facet.items">
+            <span class="facet-item-name">{{facetItem.name}}</span> <span class="facet-item-count">{{facetItem.count}}</span>
+        </md-checkbox>
+    </div>
+</div>

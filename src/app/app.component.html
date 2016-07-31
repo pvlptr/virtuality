@@ -1,65 +1,39 @@
-<!--<div class="app-content">
-  <tours-search></tours-search>
-</div>-->
-
-
 
 <md-sidenav-layout fullscreen>
-  <md-sidenav #sidenav>
-    <md-nav-list>
-      <a md-list-item *ngFor="let view of views">
-        <md-icon md-list-icon>{{view.icon}}</md-icon>
-        <span md-line>{{view.name}}</span>
-        <span md-line class="secondary">{{view.description}}</span>
-      </a>
-    </md-nav-list>
-  </md-sidenav>
-  <md-toolbar color="primary">
+  <md-toolbar color="primary"sc>
     <button md-icon-button (click)="sidenav.open()">
       <md-icon>menu</md-icon>
-    </button>
-    Puppy Love
-    <button md-fab (click)="formShowing=!formShowing">
-      <md-icon>add</md-icon>
-    </button>
+    </button> 
+    <span class="banner">Virtualūs turai</span>
   </md-toolbar>
+  <md-sidenav #sidenav>
+    <md-nav-list>
+      <a md-list-item>
+        <md-icon md-list-icon>collections</md-icon>
+        <span md-line>Virtualios parodos</span>
+        <span md-line class="secondary">Virtualios parodos ir pasakojimai</span>
+      </a>
+      <a md-list-item>
+        <md-icon md-list-icon>explore</md-icon>
+        <span md-line>Interaktyvus maršrutai</span>
+        <span md-line class="secondary">Interaktyvūs kultūriniai turizmo maršrutai</span>
+      </a>
 
-  <div class="form" *ngIf="formShowing">
-    <md-card>
-      <md-card-title>Create your dog's profile</md-card-title>
-      <md-card-content>
-        <form>
-          <md-input placeholder="Name"></md-input>
-          <md-input placeholder="Favorite toy"></md-input>
-          <md-input placeholder="Description"></md-input>
-          <md-radio-group>
-            <md-radio-button value="Looking for love">Looking for love</md-radio-button>
-            <md-radio-button value="Just browsing">Just browsing</md-radio-button>
-          </md-radio-group>
-          <div>
-            <md-checkbox indeterminate="true">Is a good dog</md-checkbox>
-          </div>
-        </form>
-      </md-card-content>
-      <md-card-actions align="end">
-        <button md-raised-button color="accent">POST</button>
-      </md-card-actions>
-    </md-card>
-  </div>
+      <md-divider></md-divider>
+      <a md-list-item>
+        <md-icon md-list-icon>assignment ind</md-icon>
+        <span md-line>Mano profilis</span>
+        <span md-line class="secondary">Profilio nustatymai ir informacija</span>
+      </a>
 
-  <div class="card-container">
-    <md-card *ngFor="let dog of dogs">
-      <img md-card-image [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">
-      <md-card-title>{{dog.name}}</md-card-title>
-      <md-card-content class="secondary">
-        Very ipsum such dolor amet wow very divs very content concern, very much develop much spans
-        much layer so so scare such spans such padding many beta very layer much excuse.
-      </md-card-content>
-      <md-card-actions align="end">
-        <button md-button color="primary">SNIFF</button>
-        <button md-button color="primary">WOOF</button>
-      </md-card-actions>
-    </md-card>
-  </div>
+    </md-nav-list>
+  </md-sidenav>
+
+
+  <tours-search class="app-content"></tours-search>
 
 </md-sidenav-layout>
+
+
+
+
