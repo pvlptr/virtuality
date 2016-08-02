@@ -15,7 +15,7 @@ import {MdIcon, MdIconRegistry} from "@angular2-material/icon";
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+  styleUrls: ['app.component.css'],
   directives: [
     ToursSearchComponent,
     MD_SIDENAV_DIRECTIVES,
