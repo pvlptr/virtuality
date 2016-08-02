@@ -5,11 +5,13 @@ export const FACETS: Facet[] = [
     items: [
       {
         name: 'Petras Petraitis',
-        count: 12
+        count: 12,
+        selected: false
       },
       {
         name: 'Jonas Jonaitis',
-        count: 5
+        count: 5,
+        selected: false
       }
     ]
   },
@@ -18,19 +20,23 @@ export const FACETS: Facet[] = [
     items: [
       {
         name: 'Lietuvos dailės muziejus',
-        count: 21
+        count: 21,
+        selected: false
       },
       {
         name: 'Akmenės krašto muziejus',
-        count: 5
+        count: 5,
+        selected: false
       },
       {
         name: 'Alytaus kraštotyros muziejus',
-        count: 4
+        count: 4,
+        selected: false
       },
       {
         name: 'Labai ilgas muziejaus pavadinimas skirtas išsibandyti wrapą',
-        count: 2
+        count: 2,
+        selected: false
       }
     ]
   },
@@ -39,15 +45,18 @@ export const FACETS: Facet[] = [
     items: [
       {
         name: 'Prieš mėnesį',
-        count: 3
+        count: 3,
+        selected: false
       },
       {
         name: 'Prieš metus',
-        count: 3
+        count: 3,
+        selected: false
       },
       {
         name: 'Daugiau nei prieš metus',
-        count: 5
+        count: 5,
+        selected: false
       }
     ]
   },

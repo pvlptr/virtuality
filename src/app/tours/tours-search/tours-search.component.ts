@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tour } from '../shared';
-import { ToursListComponent} from '../tours-list/index';
-import { ToursFacetsComponent } from '../tours-facets/index';
+import { ToursListComponent} from './tours-list/index';
+import { ToursFacetsComponent } from './tours-facets/index';
 
 @Component({
   moduleId: module.id,

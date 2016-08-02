@@ -3,4 +3,5 @@ md-toolbar{
 }
 .banner{
     font-size: 36px;
+    white-space: nowrap;
 }

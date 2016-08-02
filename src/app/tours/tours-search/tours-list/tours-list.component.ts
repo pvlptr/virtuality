@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Tour, TourService } from '../shared/index';
+import { Tour, TourService } from '../../shared/index';
+import { ToursListItemComponent } from './tours-list-item.component';
 import {MdButton} from '@angular2-material/button';
-import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 
 
@@ -12,9 +12,9 @@ import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
   styleUrls: ['tours-list.component.css'],
   providers: [TourService, MdIconRegistry],
   directives: [
-    MD_LIST_DIRECTIVES,
     MdButton,
-    MdIcon
+    MdIcon,
+    ToursListItemComponent
   ]
 
 })

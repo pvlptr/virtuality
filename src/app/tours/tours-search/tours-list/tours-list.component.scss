@@ -1,0 +1,15 @@
+.tours-list{
+  display: flex;
+  flex-flow: column;
+
+  .new-tour-fab-container{
+    position: relative;
+    .new-tour-fab{
+      position: absolute;
+      right: 8px;
+      top: -28px;
+      z-index: 100;
+    }
+  }    
+}
+

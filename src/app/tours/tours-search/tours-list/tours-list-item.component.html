@@ -1,0 +1,25 @@
+<div class="tour">
+    <div class="action-block-container">
+        <div class="action-block">
+            <button md-icon-button class="action">
+                <md-icon>visibility</md-icon>
+            </button>
+            <button md-icon-button class="action">
+                <md-icon>edit</md-icon>
+            </button>
+            <button md-icon-button class="action">
+                <md-icon>delete</md-icon>
+            </button>
+        </div>
+    </div>
+    <div class="tour-img">
+        <img [alt]="tour.name" src="https://material.angularjs.org/material2_assets/ngconf/Mal.png">
+    </div>
+    <div class="tour-text">
+        <span class="tour-text-header">{{tour.name}}</span>
+        <span class="tour-text-details"> 
+                {{tour.description}}
+            </span>
+    </div>
+</div>
+
