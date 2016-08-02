@@ -1,13 +1,18 @@
-import { Injectable } from '@angular/core';
-import { FACETS } from './mock-facets';
+import {Injectable} from "@angular/core";
+import {FACETS} from "./mock-facets";
+import {Facet} from "./index";
 
 @Injectable()
 export class FacetService {
 
-  constructor() { }
+  constructor() {
+  }
 
-    getFacets() {
-        return Promise.resolve(FACETS);
-    }  
+  getFacets() {
+    return new Promise<Facet[]>(
+      // resolve => resolve(TOURS)
+      resolve => setTimeout(() => resolve(FACETS), 2000)
+    );
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Facet } from './facet.model';
+import {Facet} from "./facet.model";
 export const FACETS: Facet[] = [
   {
     name: 'Autorius',

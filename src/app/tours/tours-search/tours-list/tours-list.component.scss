@@ -1,9 +1,11 @@
 .tours-list{
   display: flex;
   flex-flow: column;
+  align-items: center;
 
   .new-tour-fab-container{
     position: relative;
+    align-self: flex-end;
     .new-tour-fab{
       position: absolute;
       right: 8px;

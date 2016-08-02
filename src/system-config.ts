@@ -23,7 +23,8 @@ const materialPackages: string[] = [
   'card',
   'input',
   'radio',
-  'checkbox'
+  'checkbox',
+  'progress-circle'
 ];
 
 const packages: any = {};
@@ -59,9 +60,9 @@ const barrels: string[] = [
   'app',
   'app/shared',
   'app/tours/tours-search',
-  'app/tours/tours-facets',
-  'app/tours/tours-list',
-  'app/tours/tours-facets/shared/facet',
+  'app/tours/tours-search/tours-facets',
+  'app/tours/tours-search/tours-list',
+  'app/tours/tours-search/tours-facets/shared',
   /** @cli-barrel */
 ];
 

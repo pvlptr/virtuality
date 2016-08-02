@@ -10,7 +10,6 @@ import {MdCheckbox} from "@angular2-material/checkbox";
 import {MdRadioButton, MdRadioGroup} from "@angular2-material/radio";
 import {MdIcon, MdIconRegistry} from "@angular2-material/icon";
 
-
 @Component({
   moduleId: module.id,
   selector: 'app-root',

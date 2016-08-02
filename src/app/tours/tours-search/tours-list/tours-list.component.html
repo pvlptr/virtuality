@@ -4,6 +4,7 @@
             <md-icon class="md-24">add</md-icon>
         </md-icon-button>
     </div>
+    <md-progress-circle mode="indeterminate" color="primary" *ngIf="!loaded"></md-progress-circle>
 
     <tours-list-item [tour]="tour" *ngFor="let tour of tours">
     </tours-list-item>

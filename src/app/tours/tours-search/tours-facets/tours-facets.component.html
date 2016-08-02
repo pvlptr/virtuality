@@ -1,8 +1,9 @@
 <div class="facets">
+
+    <md-progress-circle mode="indeterminate" color="primary" *ngIf="!loaded"></md-progress-circle>
     <div *ngFor="let facet of facets" class="facet">
         <div class="facet-header">{{facet.name}}</div>
-
-        <md-checkbox class="facet-item" *ngFor="let facetItem of facet.items">
+        <md-checkbox class="facet-item" *ngFor="let facetItem of facets">
             <span class="facet-item-name">{{facetItem.name}}</span> <span class="facet-item-count">{{facetItem.count}}</span>
         </md-checkbox>
     </div>

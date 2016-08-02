@@ -1,5 +1,5 @@
-import { FacetItem } from './';
+import {FacetItem} from "./";
 export class Facet {
-    name: string;
-    items: FacetItem[];    
+  name: string;
+  items: FacetItem[];
 }

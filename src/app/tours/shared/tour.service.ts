@@ -1,13 +1,17 @@
-import { Injectable } from '@angular/core';
-import { TOURS } from './index';
+import {Injectable} from "@angular/core";
+import {Tour, TOURS} from "./index";
 
 @Injectable()
 export class TourService {
 
-  constructor() { }
+    constructor() { }
 
     getTours() {
-        return Promise.resolve(TOURS);
-    }  
+        return new Promise<Tour[]>(
+            // resolve => resolve(TOURS)
+            resolve => setTimeout(() => resolve(TOURS), 1000)
+        );
+
+    }
 
 }

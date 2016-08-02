@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { Tour } from '../../shared/index';
-import {MdButton} from '@angular2-material/button';
-import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
+import {Component, Input} from "@angular/core";
+import {Tour} from "../../shared/index";
+import {MdButton} from "@angular2-material/button";
+import {MdIcon, MdIconRegistry} from "@angular2-material/icon";
 
 
 @Component({
