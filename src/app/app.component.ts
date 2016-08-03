@@ -9,7 +9,8 @@ import {MdInput} from "@angular2-material/input";
 import {MdCheckbox} from "@angular2-material/checkbox";
 import {MdRadioButton, MdRadioGroup} from "@angular2-material/radio";
 import {MdIcon, MdIconRegistry} from "@angular2-material/icon";
-
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import {TourService} from "./tours/shared/tour.service";
 
 @Component({
   moduleId: module.id,
@@ -27,9 +28,10 @@ import {MdIcon, MdIconRegistry} from "@angular2-material/icon";
     MdCheckbox,
     MdRadioGroup,
     MdRadioButton,
-    MdIcon
+    MdIcon,
+    ROUTER_DIRECTIVES
   ],
-  providers: [MdIconRegistry]
+  providers: [MdIconRegistry,  TourService]
 })
 export class AppComponent {
 

@@ -63,6 +63,9 @@ const barrels: string[] = [
   'app/tours/tours-search/tours-facets',
   'app/tours/tours-search/tours-list',
   'app/tours/tours-search/tours-facets/shared',
+  'app/expos-list',
+  'app/expos/expos-list',
+  'app/journeys/journey-list',
   /** @cli-barrel */
 ];
 

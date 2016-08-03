@@ -6,10 +6,10 @@ import {Tour} from "../shared/tour.model";
 @Component({
   moduleId: module.id,
   selector: 'tour-preview',
-  templateUrl: 'tour-preview.component.html',
-  styleUrls: ['tour-preview.component.css']
+  templateUrl: 'tour-edit.component.html',
+  styleUrls: ['tour-edit.component.css']
 })
-export class TourPreviewComponent implements OnInit, OnDestroy  {
+export class TourEditComponent implements OnInit, OnDestroy  {
 
   private sub:any;
   private tour:Tour;
