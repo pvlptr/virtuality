@@ -1,18 +1,16 @@
 import {Injectable} from "@angular/core";
 import {FACETS} from "./mock-facets";
 import {Facet} from "./index";
+import {SlowMotionService} from "../../../../settings/slow-motion.service";
 
 @Injectable()
 export class FacetService {
 
-  constructor() {
+  constructor(private slowMotionService:SlowMotionService) {
   }
 
-  getFacets() {
-    return new Promise<Facet[]>(
-      // resolve => resolve(TOURS)
-      resolve => setTimeout(() => resolve(FACETS), 2000)
-    );
+  getFacets(): Promise<Facet[]> {
+    return this.slowMotionService.delayResult(FACETS);
   }
 
 }

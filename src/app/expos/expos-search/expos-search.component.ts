@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
+import EventEmitter = protractor.EventEmitter;
+import {CurrentPageService} from "../../shared/current-page.service";
 
 @Component({
   moduleId: module.id,
@@ -8,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExposSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private currentPageService: CurrentPageService) { }
 
   ngOnInit() {
+    this.currentPageService.extractTitle = () => "Virtualios parodos";
   }
 
 }

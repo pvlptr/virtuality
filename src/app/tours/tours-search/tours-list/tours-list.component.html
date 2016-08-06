@@ -1,11 +1,11 @@
-<div class="tours-list">
-    <div class="new-tour-fab-container">
-        <md-icon-button md-fab class="new-tour-fab">
-            <md-icon class="md-24">add</md-icon>
-        </md-icon-button>
-    </div>
-    <md-progress-circle mode="indeterminate" color="primary" *ngIf="!loaded"></md-progress-circle>
+<div class="tours-list-container">
+  <div class="new-tour-fab-container">
+    <a md-fab class="new-tour-fab" [routerLink]="['/tour/edit']">
+      <md-icon class="md-24">add</md-icon>
+    </a>
+  </div>
+  <md-progress-circle mode="indeterminate" color="primary" *ngIf="!loaded"></md-progress-circle>
 
-    <tours-list-item [tour]="tour" *ngFor="let tour of tours">
-    </tours-list-item>
+  <tours-list-item class="tours-list" [tour]="tour" *ngFor="let tour of tours">
+  </tours-list-item>
 </div>

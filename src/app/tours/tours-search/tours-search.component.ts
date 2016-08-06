@@ -1,6 +1,7 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {ToursListComponent} from "./tours-list/index";
 import {ToursFacetsComponent} from "./tours-facets/index";
+import {CurrentPageService} from "../../shared/current-page.service";
 
 @Component({
   moduleId: module.id,
@@ -9,5 +10,13 @@ import {ToursFacetsComponent} from "./tours-facets/index";
   styleUrls: ['tours-search.component.css'],
   directives: [ToursListComponent, ToursFacetsComponent]
 })
-export class ToursSearchComponent {
+export class ToursSearchComponent implements OnInit {
+
+  constructor(private currentPageService:CurrentPageService) {
+
+  }
+
+  ngOnInit() {
+    this.currentPageService.extractTitle = () => "Virtualūs turai";
+  }
 }

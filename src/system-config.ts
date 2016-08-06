@@ -24,7 +24,8 @@ const materialPackages: string[] = [
   'input',
   'radio',
   'checkbox',
-  'progress-circle'
+  'progress-circle',
+  'menu'
 ];
 
 const packages: any = {};

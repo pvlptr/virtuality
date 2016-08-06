@@ -1,0 +1,21 @@
+<md-card class="card">
+  <!--<md-card-title>Virtualaus turo redagavimas</md-card-title>-->
+  <md-card-content>
+    <form (ngSubmit)="onSave()" #settingsForm="ngForm">
+
+      <div>
+        <md-checkbox name="slowMotion" [(ngModel)]="settings.slowMotion">Slow motion</md-checkbox>
+      </div>
+      <div *ngIf="settings.slowMotion">
+        <div>
+          <md-input name="slowMotionConstantDelay" [(ngModel)]="settings.constantDelay" placeholder="Slow motion constant delay">
+          </md-input>
+        </div>
+        <div>
+          <md-input name="slowMotionRandomDelay" [(ngModel)]="settings.randomDelay"  placeholder="Slow motion random delay"></md-input>
+        </div>
+      </div>
+
+    </form>
+  </md-card-content>
+</md-card>

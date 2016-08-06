@@ -3,6 +3,7 @@ import {Tour} from "../../shared/index";
 import {MdButton} from "@angular2-material/button";
 import {MdIcon} from "@angular2-material/icon";
 import {ROUTER_DIRECTIVES} from "@angular/router";
+import {TourService} from "../../shared/tour.service";
 
 @Component({
   moduleId: module.id,
@@ -19,11 +20,11 @@ export class ToursListItemComponent {
   @Input()
   tour:Tour;
 
-  constructor() {
+  constructor(private service: TourService) {
   }
 
   onDelete(tour:Tour) {
-    // todo
+    this.service.delete(tour);
   }
 
 }
