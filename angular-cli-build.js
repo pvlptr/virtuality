@@ -17,7 +17,8 @@ module.exports = function(defaults) {
       'rxjs/**/*.+(js|js.map)',
       '@angular/**/*.+(js|js.map)',
       '@ng-bootstrap/ng-bootstrap/**/*.+(css|js|js.map)',
-      '@angular2-material/**/*.js'
+      '@angular2-material/**/*.js',
+      //'ng2-file-upload/**/*.js'
     ]
   });
 };

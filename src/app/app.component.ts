@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Renderer} from "@angular/core";
 import {ToursSearchComponent} from "./tours/tours-search/tours-search.component";
 import {MdToolbar} from "@angular2-material/toolbar";
 import {MdButton} from "@angular2-material/button";

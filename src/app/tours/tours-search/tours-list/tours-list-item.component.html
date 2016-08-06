@@ -15,6 +15,9 @@
     <div class="tour-img">
         <img [alt]="tour.name" src="https://material.angularjs.org/material2_assets/ngconf/Mal.png">
     </div>
+  <div class="tour-img">
+    <img [alt]="tour.name" #tourImage>
+  </div>
     <div class="tour-text">
         <span class="tour-text-header">{{tour.name}}</span>
         <span class="tour-text-details">

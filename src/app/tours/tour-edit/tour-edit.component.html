@@ -26,6 +26,9 @@
             maxLength="2000">
           </md-input>
         </div>
+        <div>
+          <input type="file" (change)="onThumbnailChange($event)"/>
+        </div>
 
         <md-card-actions align="end">
           <button md-raised-button type="submit" [disabled]="!tourForm.form.valid">Išsaugoti</button>

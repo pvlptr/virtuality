@@ -8,12 +8,12 @@
  * User Configuration.
  **********************************************************************************************/
 /** Map relative paths to URLs. */
-const map: any = {
+const map:any = {
   '@angular2-material': 'vendor/@angular2-material'
 };
 
 /** User packages configuration. */
-const materialPackages: string[] = [
+const materialPackages:string[] = [
   'core',
   'toolbar',
   'icon',
@@ -28,11 +28,19 @@ const materialPackages: string[] = [
   'menu'
 ];
 
-const packages: any = {};
+const packages:any = {};
 
 materialPackages.forEach((pkg) => {
   packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
 });
+
+
+// packages['ng2-file-upload'] = {
+//   format: 'cjs',
+//   defaultExtension: 'js',
+//   main: 'ng2-file-upload.js'
+// };
+
 
 // packages['@ng-bootstrap/ng-bootstrap'] = {
 //   defaultExtension: 'js',
@@ -43,7 +51,7 @@ materialPackages.forEach((pkg) => {
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
  **********************************************************************************************/
-const barrels: string[] = [
+const barrels:string[] = [
   // Angular specific barrels.
   '@angular/core',
   '@angular/common',
@@ -70,19 +78,20 @@ const barrels: string[] = [
   /** @cli-barrel */
 ];
 
-const cliSystemConfigPackages: any = {};
-barrels.forEach((barrelName: string) => {
-  cliSystemConfigPackages[barrelName] = { main: 'index' };
+const cliSystemConfigPackages:any = {};
+barrels.forEach((barrelName:string) => {
+  cliSystemConfigPackages[barrelName] = {main: 'index'};
 });
 
 /** Type declaration for ambient System. */
-declare var System: any;
+declare var System:any;
 
 // Apply the CLI SystemJS configuration.
 System.config({
   map: {
     '@angular': 'vendor/@angular',
-    '@angular2-material': 'vendor/@angular2-material',
+    '@angular2-material': 'vendor/@angular2-material1',
+    // 'ng2-file-upload': 'vendor/ng2-file-upload',
     'rxjs': 'vendor/rxjs',
     'main': 'main.js'
   },
@@ -90,4 +99,4 @@ System.config({
 });
 
 // Apply the user's configuration.
-System.config({ map, packages });
+System.config({map, packages});

@@ -13,7 +13,6 @@ import {MdCheckbox} from '@angular2-material/checkbox';
 import {MdRadioButton, MdRadioGroup} from '@angular2-material/radio';
 import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 import {MdTextarea} from "../../shared/component/textarea/textarea";
-import {Pipe, PipeTransform} from '@angular/core';
 import {CurrentPageService} from "../../shared/current-page.service";
 
 @Component({
@@ -66,6 +65,13 @@ export class TourEditComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  onThumbnailChange(event) {
+    let files = event.srcElement.files;
+    let file = files[0];
+    this.tour.updloadedThumbnail = file;
+    console.log(files);
   }
 
   onSave() {
