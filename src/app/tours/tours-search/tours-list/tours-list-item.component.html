@@ -1,14 +1,14 @@
 <div class="tour">
     <div class="action-block-container">
         <div class="action-block">
-            <a md-icon-button  class="action" [routerLink]="['/tour/preview', tour.id]">
-                <md-icon>visibility</md-icon>
+            <a class="action" [routerLink]="['/tour/preview', tour.id]">
+                <md-icon class="md24">visibility</md-icon>
             </a>
-            <a md-icon-button  class="action" [routerLink]="['/tour/edit', tour.id]">
-                <md-icon>edit</md-icon>
+            <a class="action" [routerLink]="['/tour/edit', tour.id]">
+                <md-icon class="md24">edit</md-icon>
             </a>
-            <button md-icon-button class="action" (click)="onDelete(tour)">
-                <md-icon>delete</md-icon>
+            <button class="action" (click)="onDelete(tour)">
+                <md-icon class="md24">delete</md-icon>
             </button>
         </div>
     </div>
