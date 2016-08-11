@@ -90,9 +90,10 @@ declare var System:any;
 System.config({
   map: {
     '@angular': 'vendor/@angular',
-    '@angular2-material': 'vendor/@angular2-material1',
+    '@angular2-material': 'vendor/@angular2-material',
     // 'ng2-file-upload': 'vendor/ng2-file-upload',
     'rxjs': 'vendor/rxjs',
+    'pannellum': 'vendor/pannellum/build/pannellum.js',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages
