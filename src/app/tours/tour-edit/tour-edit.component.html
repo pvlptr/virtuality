@@ -1,41 +1,50 @@
 <div *ngIf="tour">
-  <md-card class="card">
-    <!--<md-card-title>Virtualaus turo redagavimas</md-card-title>-->
-    <md-card-content>
-      <form (ngSubmit)="onSave()" #tourForm="ngForm">
+  <div class="tour-container">
+    <form (ngSubmit)="onSave()" #tourForm="ngForm">
 
-        <div>
-          <md-input
-            placeholder="Pavadinimas" class="input" name="name" type="text" required
-            [(ngModel)]="tour.name"
-            maxLength="100">
-          </md-input>
+      <div class="field">
+        <md-input
+          placeholder="Pavadinimas" class="input" name="name" type="text" required
+          [(ngModel)]="tour.name"
+          maxLength="100">
+        </md-input>
+      </div>
+
+      <!--<div>-->
+      <!--<md-textarea placeholder="Aprašymas" class="input" name="description" type="text"-->
+      <!--[(ngModel)]="tour.description"-->
+      <!--maxLength="2000">-->
+      <!--</md-textarea>-->
+      <!--</div>-->
+
+      <div class="field">
+        <md-input
+          placeholder="Aprašymas" class="input" name="description" type="text" required
+          [(ngModel)]="tour.description"
+          maxLength="2000">
+        </md-input>
+      </div>
+
+      <div class="media-container">
+        <div class="thumbnail-container">
+          <label class="label">Viršelis</label>
+          <img [alt]="tour.name" class="thumbnail" src="{{tour.thumbnailUrl}}" #thumbnail/>
+          <input type="file" value="Pasirinkti failą" (change)="onThumbnailChange($event)">
         </div>
 
-        <!--<div>-->
-        <!--<md-textarea placeholder="Aprašymas" class="input" name="description" type="text"-->
-        <!--[(ngModel)]="tour.description"-->
-        <!--maxLength="2000">-->
-        <!--</md-textarea>-->
-        <!--</div>-->
-
-        <div>
-          <md-input
-            placeholder="Aprašymas" class="input" name="description" type="text" required
-            [(ngModel)]="tour.description"
-            maxLength="2000">
-          </md-input>
+        <div class="panorama-container">
+          <label class="label">Panorama</label>
+          <div class="panorama-view-container">
+            <div id="panorama" class="panorama" #panorama></div>
+          </div>
+          <input type="file" value="Pasirinkti failą" (change)="onPanoramaChange($event)"/>
         </div>
-        <div>
-          <input type="file" (change)="onThumbnailChange($event)"/>
-        </div>
+      </div>
 
-        <md-card-actions align="end">
-          <button md-raised-button type="submit" [disabled]="!tourForm.form.valid">Išsaugoti</button>
-        </md-card-actions>
+      <button md-raised-button type="submit" [disabled]="!tourForm.form.valid">Išsaugoti</button>
 
-      </form>
-    </md-card-content>
-  </md-card>
+    </form>
+
+  </div>
 </div>
 

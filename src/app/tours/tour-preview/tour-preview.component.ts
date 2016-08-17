@@ -1,5 +1,5 @@
-import {Component, OnInit, OnDestroy, AfterViewInit} from "@angular/core";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, Renderer} from "@angular/core";
+import {ActivatedRoute, Router, ROUTER_DIRECTIVES} from "@angular/router";
 import {TourService} from "../shared/tour.service";
 import {Tour} from "../shared/tour.model";
 import {Subscription} from "rxjs/Rx";
@@ -10,17 +10,20 @@ import * as pannellum from "pannellum";
   moduleId: module.id,
   selector: 'tour-preview',
   templateUrl: 'tour-preview.component.html',
-  styleUrls: ['tour-preview.component.css']
+  styleUrls: ['tour-preview.component.css'],
+  directives: [
+    ROUTER_DIRECTIVES
+  ]
 })
-export class TourPreviewComponent implements OnInit, OnDestroy, AfterViewInit  {
+export class TourPreviewComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private sub:Subscription;
   private tour:Tour;
 
-  constructor(
-              private route:ActivatedRoute,
+  constructor(private route:ActivatedRoute,
+              private renderer:Renderer,
               private service:TourService,
-              private currentPageService: CurrentPageService) {
+              private currentPageService:CurrentPageService) {
   }
 
   ngOnInit() {
@@ -29,13 +32,19 @@ export class TourPreviewComponent implements OnInit, OnDestroy, AfterViewInit  {
     this.sub = this.route.params.subscribe(params => {
       let id = +params['id'];
       this.service.getTour(id).then(tour => {
-        this.tour = tour;
         this.currentPageService.extractTitle = () => tour.name;
+        this.tour = tour;
       });
     });
 
-
-
+    setTimeout(() => {
+        pannellum.pannellum.viewer('panorama', {
+          "type": "equirectangular",
+          "panorama": "https://pannellum.org/images/alma.jpg"
+        });
+      }
+      , 0
+    );
 
   }
 
@@ -43,25 +52,5 @@ export class TourPreviewComponent implements OnInit, OnDestroy, AfterViewInit  {
     this.sub.unsubscribe();
   }
 
-  ngAfterViewInit() {
-    console.log('ngAfterViewInit');
-    // setTimeout(()=> {
-    //     pannellum.pannellum.viewer('panorama', {
-    //       "type": "equirectangular",
-    //       "panorama": "https://pannellum.org/images/alma.jpg"
-    //     });
-    //   }
-    //   , 0
-    //
-    // )
-    pannellum.pannellum.viewer('panorama', {
-     "type": "equirectangular",
-     "panorama": "https://pannellum.org/images/alma.jpg"
-    });
-  }
-
-  ngAfterViewChecked(){
-    console.log('ngAfterViewChecked');
-  }
 
 }

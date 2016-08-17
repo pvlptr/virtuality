@@ -1,23 +1,33 @@
 <div *ngIf="tour">
-  <div>Tour preview
-    <div>
-      <div>
-        <label>id: </label>
-        <span>{{tour.id}}</span>
+  <div class="tour-container">
+    <div class="field">
+      <label>Pavadinimas: </label>
+      <span>{{tour.name}}</span>
+    </div>
+    <div class="field">
+      <label>Aprašymas: </label>
+      <span>{{tour.description}}</span>
+    </div>
+
+
+    <div class="media-container">
+      <div class="thumbnail-container">
+        <label class="label">Viršelis</label>
+        <img [alt]="tour.name" class="thumbnail" src="{{tour.thumbnailUrl}}"/>
       </div>
-      <div>
-        <label>name: </label>
-        <span>{{tour.name}}</span>
-      </div>
-      <div>
-        <label>decription: </label>
-        <span>{{tour.description}}</span>
+
+      <div class="panorama-container">
+        <label class="label">Panorama</label>
+        <div class="panorama-view-container">
+          <div id="panorama" class="panorama"></div>
+        </div>
       </div>
     </div>
-    <div>
-      <label>panorama:</label>
-      <div id="panorama" class="panorama"></div>
+    <div class="field">
+      <button md-raised-button [routerLink]="['/tour/edit', tour.id]">Redaguoti</button>
     </div>
   </div>
+
+</div>
 
 

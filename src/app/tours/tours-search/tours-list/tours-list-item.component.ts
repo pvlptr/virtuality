@@ -16,29 +16,15 @@ import {TourService} from "../../shared/tour.service";
     ROUTER_DIRECTIVES
   ]
 })
-export class ToursListItemComponent implements AfterViewInit {
+export class ToursListItemComponent{
+
   @Input()
   tour:Tour;
 
-  @ViewChild('tourImage') tourImage:ElementRef;
-
-  constructor(private service:TourService, private renderer:Renderer) {
+  constructor(private service:TourService) {
   }
 
-  ngAfterViewInit() {
-    if (this.tour.updloadedThumbnail) {
 
-      let reader = new FileReader();
-      let tourImage = this.tourImage;
-      let renderer = this.renderer;
-
-      reader.onload = function (e) {
-        let target:any = e.target;
-        renderer.setElementAttribute(tourImage.nativeElement, 'src', target.result);
-      }
-      reader.readAsDataURL(this.tour.updloadedThumbnail);
-    }
-  }
 
   onDelete(tour:Tour) {
     this.service.delete(tour);

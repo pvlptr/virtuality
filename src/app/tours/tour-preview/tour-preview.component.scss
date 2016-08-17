@@ -1,4 +1,54 @@
-.panorama{
-  width: 100%;
-  height: 100vh;
+.tour-container {
+  display: flex;
+  flex-flow: column;
+  margin: 8px;
+
+  .field {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    label {
+      color: rgba(0, 0, 0, 0.38);
+      display: block;
+      font-size: 75%;
+    }
+  }
+
+  .media-container {
+    @extend .field;
+    display: flex;
+    @media screen and (max-width: 554px) {
+      flex-wrap: wrap;
+    }
+    .panorama-container {
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+      min-height: 100px;
+      width: 100%;
+      .panorama-view-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .panorama {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+        @media screen and (max-width: 554px) {
+          padding-bottom: 57%;
+        }
+      }
+    }
+    .thumbnail-container {
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+      min-height: 100px;
+      width: 100%;
+      .thumbnail {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
 }

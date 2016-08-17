@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from "@angular/core";
+import {Component, OnInit, OnDestroy, ViewChild, ElementRef} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TourService} from "../shared/tour.service";
 import {Tour} from "../shared/tour.model";
@@ -14,6 +14,7 @@ import {MdRadioButton, MdRadioGroup} from '@angular2-material/radio';
 import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 import {MdTextarea} from "../../shared/component/textarea/textarea";
 import {CurrentPageService} from "../../shared/current-page.service";
+import * as pannellum from "pannellum";
 
 @Component({
   moduleId: module.id,
@@ -38,8 +39,14 @@ export class TourEditComponent implements OnInit, OnDestroy {
   private sub:Subscription;
   private tour:Tour;
 
+
+  @ViewChild('thumbnail') thumbnail:ElementRef;
+  private updloadedThumbnail:File;
+  @ViewChild('panorama') panorama:ElementRef;
+  private uploadedPanorama:File;
+
   constructor(public route:ActivatedRoute,
-              private router: Router,
+              private router:Router,
               private service:TourService,
               private currentPageService:CurrentPageService) {
   }
@@ -61,22 +68,54 @@ export class TourEditComponent implements OnInit, OnDestroy {
         this.tour = new Tour();
       }
     });
+
+    setTimeout(() => {
+        pannellum.pannellum.viewer('panorama', {
+          "type": "equirectangular",
+          "panorama": "https://pannellum.org/images/alma.jpg"
+        });
+      }
+      , 0
+    );
+
   }
 
   ngOnDestroy() {
+    console.log('ngOnDestroy  ' + document.getElementById("panorama"));
     this.sub.unsubscribe();
-  }
-
-  onThumbnailChange(event) {
-    let files = event.srcElement.files;
-    let file = files[0];
-    this.tour.updloadedThumbnail = file;
-    console.log(files);
   }
 
   onSave() {
     this.service.save(this.tour);
     this.router.navigate(["/tours"]);
+  }
+
+  onThumbnailChange(event) {
+    let file = this.extractFile(event);
+    let place = this.thumbnail;
+    this.loadUploadedImage(place, file);
+  }
+
+  onPanoramaChange(event) {
+    let file = this.extractFile(event);
+    let place = this.panorama;
+    this.loadUploadedImage(place, file);
+  }
+
+  private extractFile(event):File {
+    let files = event.srcElement.files;
+    let file = files[0];
+    return file;
+  }
+
+  private loadUploadedImage(place:ElementRef, file:File) {
+    let reader = new FileReader();
+    reader.onload = function (e) {
+      place.nativeElement.setAttribute('src', e.target.result);
+    }
+    reader.readAsDataURL(file);
+    console.log(place);
+    console.log(file);
   }
 
 }

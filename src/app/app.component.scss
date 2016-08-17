@@ -5,6 +5,7 @@ md-toolbar {
   justify-content: space-between;
 
   .toolbar {
+    width: 100%;
     display: flex;
     flex: 1 1 auto;
     justify-content: space-between;
@@ -29,10 +30,6 @@ md-toolbar {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   text-overflow: ellipsis;
-  @media screen and (max-width: 768px) {
-    font-size: 24px;
-    height: 30px;
-  }
 }
 
 a.active .material-icons {

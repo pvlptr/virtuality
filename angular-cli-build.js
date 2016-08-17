@@ -19,7 +19,6 @@ module.exports = function(defaults) {
       '@ng-bootstrap/ng-bootstrap/**/*.+(css|js|js.map)',
       '@angular2-material/**/*.js',
       'pannellum/build/*.+(css|js)'
-
       //'ng2-file-upload/**/*.js'
     ]
   });
