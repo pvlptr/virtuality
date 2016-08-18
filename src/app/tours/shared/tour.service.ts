@@ -23,7 +23,7 @@ export class TourService {
       tour.id = TOURS.length + 1;
       TOURS.push(tour);
     }
-    console.log("Saved:" + JSON.stringify(tour));
+    console.log("Saved tour:" + JSON.stringify(tour.id));
   }
 
   delete(tour:Tour) {

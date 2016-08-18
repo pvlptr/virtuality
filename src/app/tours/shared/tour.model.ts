@@ -5,4 +5,5 @@ export class Tour {
   description:string;
   thumbnailUrl: string;
   panoramaUrl: string;
+  panoramaConfig:any;
 }

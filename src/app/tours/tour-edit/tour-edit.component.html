@@ -35,10 +35,14 @@
         <div class="panorama-container">
           <label class="label">Panorama</label>
           <div class="panorama-view-container">
-            <div id="panorama" class="panorama" #panorama></div>
+            <panorama class="panorama"
+                      [panoramaUrl]='tour.panoramaUrl'
+                      [panoramaConfig]="tour.panoramaConfig"
+                      #panorama></panorama>
           </div>
           <input type="file" value="Pasirinkti failą" (change)="onPanoramaChange($event)"/>
         </div>
+
       </div>
 
       <button md-raised-button type="submit" [disabled]="!tourForm.form.valid">Išsaugoti</button>

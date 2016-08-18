@@ -14,21 +14,25 @@ import {SettingsService} from "./settings/shared/settings.service";
 import {SlowMotionService} from "./settings/slow-motion.service";
 import {HttpModule} from "@angular/http";
 import {MdCheckbox, MdCheckboxModule} from "@angular2-material/checkbox";
-import {TourEditComponent} from "./tours/tour-edit/tour-edit.component";
-import {ToursSearchComponent} from "./tours/tours-search/tours-search.component";
-import {ToursListComponent} from "./tours/tours-search/tours-list/tours-list.component";
-import {ToursListItemComponent} from "./tours/tours-search/tours-list/tours-list-item.component";
-import {ToursFacetsComponent} from "./tours/tours-search/tours-facets/tours-facets.component";
-import {TourPreviewComponent} from "./tours/tour-preview/tour-preview.component";
-import {JourneysSearchComponent} from "./journeys/journeys-search/journeys-search.component";
-import {ExposSearchComponent} from "./expos/expos-search/expos-search.component";
-import {SettingsComponent} from "./settings/settings.component";
 import {MdMenuModule} from "@angular2-material/menu";
 import {MdProgressCircleModule} from "@angular2-material/progress-circle";
 import {MdRadioModule} from "@angular2-material/radio";
 import {MdSidenavModule} from "@angular2-material/sidenav";
 import {MdListModule} from "@angular2-material/list";
 import {MdRippleModule, OverlayModule, PortalModule} from "@angular2-material/core";
+
+import {TourEditComponent} from "./tours/tour-edit/tour-edit.component";
+import {ToursSearchComponent} from "./tours/tours-search/tours-search.component";
+import {ToursListComponent} from "./tours/tours-search/tours-list/tours-list.component";
+import {ToursListItemComponent} from "./tours/tours-search/tours-list/tours-list-item.component";
+import {ToursFacetsComponent} from "./tours/tours-search/tours-facets/tours-facets.component";
+import {TourPreviewComponent} from "./tours/tour-preview/tour-preview.component";
+import {PanoramaComponent} from "./tours/panorama/panorama.component";
+import {JourneysSearchComponent} from "./journeys/journeys-search/journeys-search.component";
+import {ExposSearchComponent} from "./expos/expos-search/expos-search.component";
+import {SettingsComponent} from "./settings/settings.component";
+
+
 
 @NgModule({
   declarations: [AppComponent,
@@ -40,7 +44,8 @@ import {MdRippleModule, OverlayModule, PortalModule} from "@angular2-material/co
     TourEditComponent,
     JourneysSearchComponent,
     ExposSearchComponent,
-    SettingsComponent
+    SettingsComponent,
+    PanoramaComponent
   ],
 
   imports: [

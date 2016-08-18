@@ -9,17 +9,16 @@ import {TourService} from "../../shared/tour.service";
   templateUrl: 'tours-list-item.component.html',
   styleUrls: ['tours-list-item.component.css']
 })
-export class ToursListItemComponent{
+export class ToursListItemComponent {
 
   @Input()
-  tour:Tour;
+  tour: Tour;
 
-  constructor(private service:TourService) {
+  constructor(private service: TourService) {
   }
 
 
-
-  onDelete(tour:Tour) {
+  onDelete(tour: Tour) {
     this.service.delete(tour);
   }
 }

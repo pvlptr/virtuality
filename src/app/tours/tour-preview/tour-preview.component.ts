@@ -4,7 +4,6 @@ import {TourService} from "../shared/tour.service";
 import {Tour} from "../shared/tour.model";
 import {Subscription} from "rxjs/Rx";
 import {CurrentPageService} from "../../shared/current-page.service";
-import * as pannellum from "pannellum";
 
 @Component({
   moduleId: module.id,
@@ -12,7 +11,9 @@ import * as pannellum from "pannellum";
   templateUrl: 'tour-preview.component.html',
   styleUrls: ['tour-preview.component.css']
 })
-export class TourPreviewComponent implements OnInit, OnDestroy, AfterViewInit {
+export class TourPreviewComponent implements OnInit, OnDestroy {
+
+  @ViewChild('panorama') panorama: ElementRef;
 
   private sub:Subscription;
   private tour:Tour;
@@ -33,21 +34,12 @@ export class TourPreviewComponent implements OnInit, OnDestroy, AfterViewInit {
         this.tour = tour;
       });
     });
-
-    setTimeout(() => {
-        pannellum.pannellum.viewer('panorama', {
-          "type": "equirectangular",
-          "panorama": "https://pannellum.org/images/alma.jpg"
-        });
-      }
-      , 0
-    );
-
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
 
 
 }
