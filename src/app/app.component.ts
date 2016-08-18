@@ -7,10 +7,7 @@ import {CurrentPageService} from "./shared/current-page.service";
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
-  directives: [
-    ToursSearchComponent,
-  ]
+  styleUrls: ['app.component.css']
 })
 export class AppComponent {
 

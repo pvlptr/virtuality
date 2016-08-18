@@ -12,11 +12,7 @@ import {ROUTER_DIRECTIVES} from "@angular/router";
   templateUrl: 'tours-list.component.html',
   styleUrls: ['tours-list.component.css'],
   directives: [
-    MdButton,
-    MdIcon,
-    ToursListItemComponent,
-    MD_PROGRESS_CIRCLE_DIRECTIVES,
-    ROUTER_DIRECTIVES
+    ToursListItemComponent
   ]
 
 })

@@ -13,7 +13,6 @@ import {CurrentPageService} from "../../shared/current-page.service";
 export class ToursSearchComponent implements OnInit {
 
   constructor(private currentPageService:CurrentPageService) {
-
   }
 
   ngOnInit() {

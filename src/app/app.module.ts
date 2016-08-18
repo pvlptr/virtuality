@@ -7,7 +7,7 @@ import {MdToolbarModule} from "@angular2-material/toolbar/toolbar";
 import {MdCardModule} from "@angular2-material/card/card";
 import {MdInputModule} from "@angular2-material/input/input";
 import {routing, appRoutingProviders} from './app.routing';
-import {MdIconRegistry} from "@angular2-material/icon";
+import {MdIconRegistry, MdIconModule} from "@angular2-material/icon";
 import {TourService} from "./tours/shared/tour.service";
 import {CurrentPageService} from "./shared/current-page.service";
 import {SettingsService} from "./settings/shared/settings.service";
@@ -28,6 +28,7 @@ import {MdProgressCircleModule} from "@angular2-material/progress-circle";
 import {MdRadioModule} from "@angular2-material/radio";
 import {MdSidenavModule} from "@angular2-material/sidenav";
 import {MdListModule} from "@angular2-material/list";
+import {MdRippleModule, OverlayModule, PortalModule} from "@angular2-material/core";
 
 @NgModule({
   declarations: [AppComponent,
@@ -51,15 +52,19 @@ import {MdListModule} from "@angular2-material/list";
     FormsModule,
     // Material Design
     MdButtonModule,
-    MdToolbarModule,
     MdCardModule,
-    MdInputModule,
     MdCheckboxModule,
+    MdIconModule,
+    MdInputModule,
     MdListModule,
     MdMenuModule,
     MdProgressCircleModule,
     MdRadioModule,
-    MdSidenavModule
+    MdRippleModule,
+    MdSidenavModule,
+    MdToolbarModule,
+    OverlayModule,
+    PortalModule
   ],
   providers: [
     appRoutingProviders,
