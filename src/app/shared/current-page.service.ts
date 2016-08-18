@@ -7,6 +7,4 @@ export class CurrentPageService {
 
   constructor() {
   }
-
-
 }

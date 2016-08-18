@@ -3,16 +3,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {TourService} from "../shared/tour.service";
 import {Tour} from "../shared/tour.model";
 import {Subscription} from "rxjs/Rx";
-import {MdToolbar} from '@angular2-material/toolbar';
-import {MdButton} from '@angular2-material/button';
-import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
-import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
-import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
-import {MdInput} from '@angular2-material/input';
-import {MdCheckbox} from '@angular2-material/checkbox';
-import {MdRadioButton, MdRadioGroup} from '@angular2-material/radio';
-import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
-import {MdTextarea} from "../../shared/component/textarea/textarea";
 import {CurrentPageService} from "../../shared/current-page.service";
 import * as pannellum from "pannellum";
 
@@ -21,18 +11,6 @@ import * as pannellum from "pannellum";
   selector: 'tour-preview',
   templateUrl: 'tour-edit.component.html',
   styleUrls: ['tour-edit.component.css'],
-  directives: [
-    MD_SIDENAV_DIRECTIVES,
-    MD_LIST_DIRECTIVES,
-    MD_CARD_DIRECTIVES,
-    MdToolbar,
-    MdInput,
-    MdCheckbox,
-    MdRadioGroup,
-    MdRadioButton,
-    MdIcon,
-    MdTextarea
-  ]
 })
 export class TourEditComponent implements OnInit, OnDestroy {
 

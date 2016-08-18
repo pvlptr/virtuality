@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, Renderer} from "@angular/core";
-import {ActivatedRoute, Router, ROUTER_DIRECTIVES} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {TourService} from "../shared/tour.service";
 import {Tour} from "../shared/tour.model";
 import {Subscription} from "rxjs/Rx";
@@ -10,10 +10,7 @@ import * as pannellum from "pannellum";
   moduleId: module.id,
   selector: 'tour-preview',
   templateUrl: 'tour-preview.component.html',
-  styleUrls: ['tour-preview.component.css'],
-  directives: [
-    ROUTER_DIRECTIVES
-  ]
+  styleUrls: ['tour-preview.component.css']
 })
 export class TourPreviewComponent implements OnInit, OnDestroy, AfterViewInit {
 
